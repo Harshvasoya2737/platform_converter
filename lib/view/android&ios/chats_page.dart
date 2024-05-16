@@ -113,312 +113,314 @@ class _ChatPageState extends State<ChatPage> {
                                                     showDialog(
                                                       context: context,
                                                       builder: (context) {
-                                                        return AlertDialog(
-                                                          content: SizedBox(
-                                                            height: 550,
-                                                            width: width,
-                                                            child: Column(
-                                                                children: [
-                                                                  (providerVar.editImage !=
-                                                                          null)
-                                                                      ? InkWell(
-                                                                          onTap:
-                                                                              () {
-                                                                            showDialog(
-                                                                                context: context,
-                                                                                builder: (context) {
-                                                                                  return AlertDialog(
-                                                                                    content: Container(
-                                                                                      width: 220,
-                                                                                      height: 104,
-                                                                                      child: Padding(
-                                                                                        padding: const EdgeInsets.only(top: 8.0),
-                                                                                        child: Column(
-                                                                                          children: [
-                                                                                            Row(
-                                                                                              children: [
-                                                                                                Icon(Icons.photo_library_outlined),
-                                                                                                SizedBox(width: 10,),
-                                                                                                ElevatedButton(
-                                                                                                    onPressed: () {
-                                                                                                      providerVar.getAlbumsImage();
-                                                                                                      Navigator.of(context).pop();
-                                                                                                    },
-                                                                                                    child: Text("Choose from Gallery")),
-                                                                                              ],
-                                                                                            ),
-                                                                                            Row(
-                                                                                              children: [
-                                                                                                Icon(Icons.camera),
-                                                                                                SizedBox(width: 10,),
-                                                                                                ElevatedButton(
-                                                                                                    onPressed: () {
-                                                                                                      providerVar.getCameraImage();
-                                                                                                      Navigator.of(context).pop();
-                                                                                                    },
-                                                                                                    child: Text("Choose from Camera")),
-                                                                                              ],
-                                                                                            ),
-                                                                                          ],
+                                                        return SingleChildScrollView(
+                                                          child: AlertDialog(
+                                                            content: SizedBox(
+                                                              height: 550,
+                                                              width: width,
+                                                              child: Column(
+                                                                  children: [
+                                                                    (providerVar.editImage !=
+                                                                            null)
+                                                                        ? InkWell(
+                                                                            onTap:
+                                                                                () {
+                                                                              showDialog(
+                                                                                  context: context,
+                                                                                  builder: (context) {
+                                                                                    return AlertDialog(
+                                                                                      content: Container(
+                                                                                        width: 220,
+                                                                                        height: 104,
+                                                                                        child: Padding(
+                                                                                          padding: const EdgeInsets.only(top: 8.0),
+                                                                                          child: Column(
+                                                                                            children: [
+                                                                                              Row(
+                                                                                                children: [
+                                                                                                  Icon(Icons.photo_library_outlined),
+                                                                                                  SizedBox(width: 10,),
+                                                                                                  ElevatedButton(
+                                                                                                      onPressed: () {
+                                                                                                        providerVar.getAlbumsImage();
+                                                                                                        Navigator.of(context).pop();
+                                                                                                      },
+                                                                                                      child: Text("Choose from Gallery")),
+                                                                                                ],
+                                                                                              ),
+                                                                                              Row(
+                                                                                                children: [
+                                                                                                  Icon(Icons.camera),
+                                                                                                  SizedBox(width: 10,),
+                                                                                                  ElevatedButton(
+                                                                                                      onPressed: () {
+                                                                                                        providerVar.getCameraImage();
+                                                                                                        Navigator.of(context).pop();
+                                                                                                      },
+                                                                                                      child: Text("Choose from Camera")),
+                                                                                                ],
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
                                                                                         ),
                                                                                       ),
-                                                                                    ),
-                                                                                  );
-                                                                                });
-                                                                          },
-                                                                          child:
-                                                                              CircleAvatar(
-                                                                            radius:
-                                                                                60,
-                                                                            backgroundImage:
-                                                                                FileImage(providerVar.editImage!),
-                                                                          ),
-                                                                        )
-                                                                      : Container(
-                                                                          height:
-                                                                              115,
-                                                                          width:
-                                                                              115,
-                                                                          decoration: BoxDecoration(
-                                                                              shape: BoxShape.circle,
-                                                                              color: Colors.black12),
-                                                                          child:
-                                                                              IconButton(
-                                                                            onPressed:
-                                                                                () {},
-                                                                            icon:
-                                                                                Icon(
-                                                                              CupertinoIcons.add,
-                                                                              size: 60,
-                                                                              color: Colors.blue,
+                                                                                    );
+                                                                                  });
+                                                                            },
+                                                                            child:
+                                                                                CircleAvatar(
+                                                                              radius:
+                                                                                  60,
+                                                                              backgroundImage:
+                                                                                  FileImage(providerVar.editImage!),
+                                                                            ),
+                                                                          )
+                                                                        : Container(
+                                                                            height:
+                                                                                115,
+                                                                            width:
+                                                                                115,
+                                                                            decoration: BoxDecoration(
+                                                                                shape: BoxShape.circle,
+                                                                                color: Colors.black12),
+                                                                            child:
+                                                                                IconButton(
+                                                                              onPressed:
+                                                                                  () {},
+                                                                              icon:
+                                                                                  Icon(
+                                                                                CupertinoIcons.add,
+                                                                                size: 60,
+                                                                                color: Colors.blue,
+                                                                              ),
                                                                             ),
                                                                           ),
-                                                                        ),
-                                                                  SizedBox(
-                                                                    height: 10,
-                                                                  ),
-                                                                  TextFormField(
-                                                                    controller:
-                                                                        providerVar
-                                                                            .editName,
-                                                                    decoration:
-                                                                        InputDecoration(
-                                                                      prefixIcon:
-                                                                          Icon(Icons
-                                                                              .person_outline_rounded),
-                                                                      labelText:
-                                                                          ' Enter Full Name',
-                                                                      border: OutlineInputBorder(
-                                                                          borderSide: BorderSide(
-                                                                              style: BorderStyle.solid,
-                                                                              color: Colors.black,
-                                                                              width: 4)),
+                                                                    SizedBox(
+                                                                      height: 10,
                                                                     ),
-                                                                    keyboardType:
-                                                                        TextInputType
-                                                                            .text,
-                                                                  ),
-                                                                  SizedBox(
-                                                                    height: 15,
-                                                                  ),
-                                                                  TextFormField(
-                                                                    controller:
-                                                                        providerVar
-                                                                            .editNumber,
-                                                                    decoration: InputDecoration(
+                                                                    TextFormField(
+                                                                      controller:
+                                                                          providerVar
+                                                                              .editName,
+                                                                      decoration:
+                                                                          InputDecoration(
                                                                         prefixIcon:
                                                                             Icon(Icons
-                                                                                .call),
+                                                                                .person_outline_rounded),
                                                                         labelText:
-                                                                            'Enter Phone Number',
+                                                                            ' Enter Full Name',
                                                                         border: OutlineInputBorder(
                                                                             borderSide: BorderSide(
                                                                                 style: BorderStyle.solid,
                                                                                 color: Colors.black,
-                                                                                width: 4))),
-                                                                    keyboardType:
-                                                                        TextInputType
-                                                                            .number,
-                                                                  ),
-                                                                  SizedBox(
-                                                                    height: 15,
-                                                                  ),
-                                                                  TextFormField(
-                                                                    controller:
-                                                                        providerVar
-                                                                            .editChat,
-                                                                    decoration: InputDecoration(
-                                                                        prefixIcon:
-                                                                            Icon(Icons
-                                                                                .chat_outlined),
-                                                                        labelText:
-                                                                            'Enter Chat Conversation',
-                                                                        border: OutlineInputBorder(
-                                                                            borderSide: BorderSide(
-                                                                                style: BorderStyle.solid,
-                                                                                color: Colors.black,
-                                                                                width: 4))),
-                                                                    keyboardType:
-                                                                        TextInputType
-                                                                            .text,
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsets
-                                                                        .only(
-                                                                        right:
-                                                                            158),
-                                                                    child: Text(
-                                                                        "Choose Date"),
-                                                                  ),
-                                                                  InkWell(
-                                                                    onTap:
-                                                                        () async {
-                                                                      date = await showDatePicker(
-                                                                          context:
-                                                                              context,
-                                                                          firstDate: DateTime(
-                                                                              1990),
-                                                                          lastDate: DateTime(
-                                                                              3000),
-                                                                          initialDate:
-                                                                              DateTime.now());
-                                                                      print(
-                                                                          date);
-                                                                      if (date !=
-                                                                          null) {
-                                                                        setState(
-                                                                            () {
-                                                                          formatedDate = (date != null)
-                                                                              ? DateFormat('dd/MM/yyyy').format(date)
-                                                                              : providerVar.editDate;
-                                                                        });
-                                                                      }
-                                                                    },
-                                                                    child:
-                                                                        Padding(
-                                                                      padding: const EdgeInsets
-                                                                          .all(
-                                                                          8.0),
-                                                                      child:
-                                                                          Row(
-                                                                        children: [
-                                                                          Icon(Icons
-                                                                              .date_range_outlined),
-                                                                          (formatedDate == null)
-                                                                              ? Text(
-                                                                                  providerVar.editDate,
-                                                                                  style: TextStyle(fontSize: 14),
-                                                                                )
-                                                                              : Text(
-                                                                                  formatedDate,
-                                                                                  style: TextStyle(fontSize: 14),
-                                                                                ),
-                                                                        ],
+                                                                                width: 4)),
                                                                       ),
+                                                                      keyboardType:
+                                                                          TextInputType
+                                                                              .text,
                                                                     ),
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsets
-                                                                        .only(
-                                                                        right:
-                                                                            158),
-                                                                    child: Text(
-                                                                        "Choose Time"),
-                                                                  ),
-                                                                  InkWell(
-                                                                    onTap:
-                                                                        () async {
-                                                                      time = await showTimePicker(
-                                                                          context:
-                                                                              context,
-                                                                          initialTime:
-                                                                              TimeOfDay.now());
-                                                                      print(time
-                                                                          .format(
-                                                                              context));
-                                                                      if (time !=
-                                                                          null) {
-                                                                        datepicker = DateTime(
-                                                                            DateTime.now().year,
-                                                                            DateTime.now().month,
-                                                                            DateTime.now().day,
-                                                                            time.hour,
-                                                                            time.minute);
-                                                                        setState(
-                                                                            () {
-                                                                          formateTime = (datepicker != null)
-                                                                              ? DateFormat('HH:mm').format(datepicker)
-                                                                              : providerVar.editTime;
-                                                                        });
-
+                                                                    SizedBox(
+                                                                      height: 15,
+                                                                    ),
+                                                                    TextFormField(
+                                                                      controller:
+                                                                          providerVar
+                                                                              .editNumber,
+                                                                      decoration: InputDecoration(
+                                                                          prefixIcon:
+                                                                              Icon(Icons
+                                                                                  .call),
+                                                                          labelText:
+                                                                              'Enter Phone Number',
+                                                                          border: OutlineInputBorder(
+                                                                              borderSide: BorderSide(
+                                                                                  style: BorderStyle.solid,
+                                                                                  color: Colors.black,
+                                                                                  width: 4))),
+                                                                      keyboardType:
+                                                                          TextInputType
+                                                                              .number,
+                                                                    ),
+                                                                    SizedBox(
+                                                                      height: 15,
+                                                                    ),
+                                                                    TextFormField(
+                                                                      controller:
+                                                                          providerVar
+                                                                              .editChat,
+                                                                      decoration: InputDecoration(
+                                                                          prefixIcon:
+                                                                              Icon(Icons
+                                                                                  .chat_outlined),
+                                                                          labelText:
+                                                                              'Enter Chat Conversation',
+                                                                          border: OutlineInputBorder(
+                                                                              borderSide: BorderSide(
+                                                                                  style: BorderStyle.solid,
+                                                                                  color: Colors.black,
+                                                                                  width: 4))),
+                                                                      keyboardType:
+                                                                          TextInputType
+                                                                              .text,
+                                                                    ),
+                                                                    Padding(
+                                                                      padding: const EdgeInsets
+                                                                          .only(
+                                                                          right:
+                                                                              158),
+                                                                      child: Text(
+                                                                          "Choose Date"),
+                                                                    ),
+                                                                    InkWell(
+                                                                      onTap:
+                                                                          () async {
+                                                                        date = await showDatePicker(
+                                                                            context:
+                                                                                context,
+                                                                            firstDate: DateTime(
+                                                                                1990),
+                                                                            lastDate: DateTime(
+                                                                                3000),
+                                                                            initialDate:
+                                                                                DateTime.now());
                                                                         print(
-                                                                            formateTime);
-                                                                      }
-                                                                    },
-                                                                    child:
-                                                                        Padding(
-                                                                      padding: const EdgeInsets
-                                                                          .all(
-                                                                          8.0),
+                                                                            date);
+                                                                        if (date !=
+                                                                            null) {
+                                                                          setState(
+                                                                              () {
+                                                                            formatedDate = (date != null)
+                                                                                ? DateFormat('dd/MM/yyyy').format(date)
+                                                                                : providerVar.editDate;
+                                                                          });
+                                                                        }
+                                                                      },
                                                                       child:
-                                                                          Row(
-                                                                        children: [
-                                                                          Icon(Icons
-                                                                              .access_time),
-                                                                          (formateTime == null)
-                                                                              ? Text(
-                                                                                  providerVar.editTime,
-                                                                                  style: TextStyle(fontSize: 14),
-                                                                                )
-                                                                              : Text(
-                                                                                  formateTime,
-                                                                                  style: TextStyle(fontSize: 14),
-                                                                                ),
-                                                                        ],
+                                                                          Padding(
+                                                                        padding: const EdgeInsets
+                                                                            .all(
+                                                                            8.0),
+                                                                        child:
+                                                                            Row(
+                                                                          children: [
+                                                                            Icon(Icons
+                                                                                .date_range_outlined),
+                                                                            (formatedDate == null)
+                                                                                ? Text(
+                                                                                    providerVar.editDate,
+                                                                                    style: TextStyle(fontSize: 14),
+                                                                                  )
+                                                                                : Text(
+                                                                                    formatedDate,
+                                                                                    style: TextStyle(fontSize: 14),
+                                                                                  ),
+                                                                          ],
+                                                                        ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                  Row(
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .spaceAround,
-                                                                    children: [
-                                                                      OutlinedButton(
-                                                                          onPressed:
+                                                                    Padding(
+                                                                      padding: const EdgeInsets
+                                                                          .only(
+                                                                          right:
+                                                                              158),
+                                                                      child: Text(
+                                                                          "Choose Time"),
+                                                                    ),
+                                                                    InkWell(
+                                                                      onTap:
+                                                                          () async {
+                                                                        time = await showTimePicker(
+                                                                            context:
+                                                                                context,
+                                                                            initialTime:
+                                                                                TimeOfDay.now());
+                                                                        print(time
+                                                                            .format(
+                                                                                context));
+                                                                        if (time !=
+                                                                            null) {
+                                                                          datepicker = DateTime(
+                                                                              DateTime.now().year,
+                                                                              DateTime.now().month,
+                                                                              DateTime.now().day,
+                                                                              time.hour,
+                                                                              time.minute);
+                                                                          setState(
                                                                               () {
-                                                                            ModelClass
-                                                                                edit =
-                                                                                ModelClass(
-                                                                              name: providerVar.editName.text,
-                                                                              number: providerVar.editNumber.text,
-                                                                              chat: providerVar.editChat.text,
-                                                                              Image: providerVar.editImage,
-                                                                              Date: (formatedDate == null) ? providerVar.editDate : formatedDate,
-                                                                              Time: (formateTime == null) ? providerVar.editTime : formateTime,
-                                                                            );
-                                                                            providerVar.editContactData(edit,
-                                                                                index);
+                                                                            formateTime = (datepicker != null)
+                                                                                ? DateFormat('HH:mm').format(datepicker)
+                                                                                : providerVar.editTime;
+                                                                          });
 
-                                                                            Navigator.of(context).pop();
-                                                                            providerVar.editImage =
-                                                                                null;
-                                                                            providerVar.editTime =
-                                                                                null;
-                                                                            providerVar.editDate =
-                                                                                null;
-                                                                          },
-                                                                          child:
-                                                                              Text('EDIT')),
-                                                                      OutlinedButton(
-                                                                          onPressed:
-                                                                              () {
-                                                                            Navigator.of(context).pop();
-                                                                          },
-                                                                          child:
-                                                                              Text('CANCEL'))
-                                                                    ],
-                                                                  ),
-                                                                ]),
+                                                                          print(
+                                                                              formateTime);
+                                                                        }
+                                                                      },
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: const EdgeInsets
+                                                                            .all(
+                                                                            8.0),
+                                                                        child:
+                                                                            Row(
+                                                                          children: [
+                                                                            Icon(Icons
+                                                                                .access_time),
+                                                                            (formateTime == null)
+                                                                                ? Text(
+                                                                                    providerVar.editTime,
+                                                                                    style: TextStyle(fontSize: 14),
+                                                                                  )
+                                                                                : Text(
+                                                                                    formateTime,
+                                                                                    style: TextStyle(fontSize: 14),
+                                                                                  ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    Row(
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .spaceAround,
+                                                                      children: [
+                                                                        OutlinedButton(
+                                                                            onPressed:
+                                                                                () {
+                                                                              ModelClass
+                                                                                  edit =
+                                                                                  ModelClass(
+                                                                                name: providerVar.editName.text,
+                                                                                number: providerVar.editNumber.text,
+                                                                                chat: providerVar.editChat.text,
+                                                                                Image: providerVar.editImage,
+                                                                                Date: (formatedDate == null) ? providerVar.editDate : formatedDate,
+                                                                                Time: (formateTime == null) ? providerVar.editTime : formateTime,
+                                                                              );
+                                                                              providerVar.editContactData(edit,
+                                                                                  index);
+
+                                                                              Navigator.of(context).pop();
+                                                                              providerVar.editImage =
+                                                                                  null;
+                                                                              providerVar.editTime =
+                                                                                  null;
+                                                                              providerVar.editDate =
+                                                                                  null;
+                                                                            },
+                                                                            child:
+                                                                                Text('EDIT')),
+                                                                        OutlinedButton(
+                                                                            onPressed:
+                                                                                () {
+                                                                              Navigator.of(context).pop();
+                                                                            },
+                                                                            child:
+                                                                                Text('CANCEL'))
+                                                                      ],
+                                                                    ),
+                                                                  ]),
+                                                            ),
                                                           ),
                                                         );
                                                       },
