@@ -18,11 +18,12 @@
 
 Overall, the **Platform Converter App** combines functionality with flexibility, providing an exceptional user experience across both Android and iOS platforms.
 
-I am also sharing the UI of My Platform Converter Application 
-**iOS Look**
+**I am also sharing the UI of My Platform Converter Application**
+
+### iOS Look
 ![platform_ios_ui1](https://github.com/Harshvasoya2737/platform_converter/assets/148517061/103d92a6-9b93-4c72-8a26-0205503ffd67)
 
-**Android Look**
+### Android Look
 ![platform_android_ui2](https://github.com/Harshvasoya2737/platform_converter/assets/148517061/ca351258-883a-4601-a383-5e9c15562ecf)
 
 Here,I am also sharing you the **screenrecording Link of Platform Converter Application**,So kindly click on the link to see the **screenrecording** 
