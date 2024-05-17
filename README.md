@@ -5,7 +5,7 @@
 **Call Functionality**: The app provides robust call functionalities, enabling users to make and manage calls efficiently within the app. You can add, edit, and delete contacts with ease, ensuring your contact list is always up to date.
 
 **Customizable Theme**: Users can toggle between dark and light modes for both Android and iOS styles, enhancing usability in various lighting conditions.
-
+### About UI of App
 **Intuitive Design**: The app features a user-friendly and visually appealing interface, making navigation simple and enjoyable. The UI is designed to provide a smooth and responsive user experience, ensuring quick access to all features.
 
 **Feature-Rich**: In addition to basic call functionalities, the app includes call logs, a dial pad, and a contact search feature, making it a comprehensive tool for managing communications.
