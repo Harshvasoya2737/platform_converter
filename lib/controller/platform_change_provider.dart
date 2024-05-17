@@ -28,7 +28,7 @@ class platformProvider with ChangeNotifier {
   TextEditingController NameController = TextEditingController();
   TextEditingController BioController = TextEditingController();
 
-  getAlbumsImage() async {
+  getAlbums() async {
     var pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickedFile != null) {
       addImage = File(pickedFile.path);
@@ -36,7 +36,7 @@ class platformProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  getCameraImage() async {
+  getCamera() async {
     var pickedFile = await ImagePicker().pickImage(source: ImageSource.camera);
     if (pickedFile != null) {
       addImage = File(pickedFile.path);
@@ -44,7 +44,7 @@ class platformProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  profileAlbumsImage() async {
+  profileAlbums() async {
     var proFile = await ImagePicker().pickImage(source: ImageSource.gallery);
     if (proFile != null) {
       proImage = File(proFile.path);
@@ -52,7 +52,7 @@ class platformProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  profileCameraImage() async {
+  profileCamera() async {
     var proFile = await ImagePicker().pickImage(source: ImageSource.camera);
     if (proFile != null) {
       proImage = File(proFile.path);
@@ -60,7 +60,7 @@ class platformProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  editAlbumImage() async {
+  editAlbum() async {
     var pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickedFile != null) {
       editImage = File(pickedFile.path);

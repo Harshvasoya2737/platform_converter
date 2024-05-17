@@ -97,8 +97,7 @@ class _ContactPageState extends State<ContactPage> {
                                                 ),
                                                 ElevatedButton(
                                                     onPressed: () {
-                                                      providerVar
-                                                          .getAlbumsImage();
+                                                      providerVar.getAlbums();
                                                       Navigator.of(context)
                                                           .pop();
                                                     },
@@ -114,8 +113,7 @@ class _ContactPageState extends State<ContactPage> {
                                                 ),
                                                 ElevatedButton(
                                                     onPressed: () {
-                                                      providerVar
-                                                          .getCameraImage();
+                                                      providerVar.getCamera();
                                                       Navigator.of(context)
                                                           .pop();
                                                     },
@@ -380,7 +378,7 @@ class _ContactPageState extends State<ContactPage> {
                                                       ElevatedButton(
                                                           onPressed: () {
                                                             providerVar
-                                                                .getAlbumsImage();
+                                                                .getAlbums();
                                                             Navigator.of(
                                                                     context)
                                                                 .pop();
@@ -398,7 +396,7 @@ class _ContactPageState extends State<ContactPage> {
                                                       ElevatedButton(
                                                           onPressed: () {
                                                             providerVar
-                                                                .getCameraImage();
+                                                                .getCamera();
                                                             Navigator.of(
                                                                     context)
                                                                 .pop();

@@ -144,7 +144,7 @@ class _ChatPageState extends State<ChatPage> {
                                                                                                   ),
                                                                                                   ElevatedButton(
                                                                                                       onPressed: () {
-                                                                                                        providerVar.getAlbumsImage();
+                                                                                                        providerVar.editAlbum();
                                                                                                         Navigator.of(context).pop();
                                                                                                       },
                                                                                                       child: Text("Choose from Gallery")),
@@ -158,7 +158,7 @@ class _ChatPageState extends State<ChatPage> {
                                                                                                   ),
                                                                                                   ElevatedButton(
                                                                                                       onPressed: () {
-                                                                                                        providerVar.getCameraImage();
+                                                                                                        providerVar.editCamera();
                                                                                                         Navigator.of(context).pop();
                                                                                                       },
                                                                                                       child: Text("Choose from Camera")),
@@ -230,7 +230,7 @@ class _ChatPageState extends State<ChatPage> {
                                                                           prefixIcon: Icon(Icons
                                                                               .call),
                                                                           labelText:
-                                                                              'Enter Phone Number',
+                                                                              "Enter Phone Number",
                                                                           border:
                                                                               OutlineInputBorder(borderSide: BorderSide(style: BorderStyle.solid, color: Colors.black, width: 4))),
                                                                       keyboardType:
@@ -249,7 +249,7 @@ class _ChatPageState extends State<ChatPage> {
                                                                           prefixIcon: Icon(Icons
                                                                               .chat_outlined),
                                                                           labelText:
-                                                                              'Enter Chat Conversation',
+                                                                              "Enter Chat Conversation",
                                                                           border:
                                                                               OutlineInputBorder(borderSide: BorderSide(style: BorderStyle.solid, color: Colors.black, width: 4))),
                                                                       keyboardType:
@@ -616,7 +616,7 @@ class _ChatPageState extends State<ChatPage> {
                                                                                               ),
                                                                                               ElevatedButton(
                                                                                                   onPressed: () {
-                                                                                                    providerVar.getAlbumsImage();
+                                                                                                    providerVar.editAlbum();
                                                                                                     Navigator.of(context).pop();
                                                                                                   },
                                                                                                   child: Text("Choose from Gallery")),
@@ -630,7 +630,7 @@ class _ChatPageState extends State<ChatPage> {
                                                                                               ),
                                                                                               ElevatedButton(
                                                                                                   onPressed: () {
-                                                                                                    providerVar.getCameraImage();
+                                                                                                    providerVar.editCamera();
                                                                                                     Navigator.of(context).pop();
                                                                                                   },
                                                                                                   child: Text("Choose from Camera")),
@@ -664,7 +664,7 @@ class _ChatPageState extends State<ChatPage> {
                                                                             CupertinoButton(
                                                                           onPressed:
                                                                               () {
-                                                                            providerVar.getAlbumsImage();
+                                                                            providerVar.getAlbums();
                                                                           },
                                                                           child:
                                                                               Icon(

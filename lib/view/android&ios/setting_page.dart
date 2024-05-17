@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:platform_converter/controller/platform_change_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:platform_converter/controller/platform_change_provider.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({super.key});
@@ -24,8 +24,8 @@ class _SettingPageState extends State<SettingPage> {
           children: [
             ListTile(
               leading: Icon(Icons.person),
-              title: Text('Profile'),
-              subtitle: Text('Upadate Profile Data'),
+              title: Text("Profile"),
+              subtitle: Text("Upadate Profile Data"),
               trailing: Switch(
                   onChanged: (value) {
                     providerVar.setProfile = value;
@@ -37,7 +37,7 @@ class _SettingPageState extends State<SettingPage> {
                 children: [
                   (providerVar.proImage != null)
                       ? CircleAvatar(
-                          radius: 70,
+                          radius: 80,
                           backgroundImage: FileImage(providerVar.proImage!),
                         )
                       : Container(
@@ -52,46 +52,54 @@ class _SettingPageState extends State<SettingPage> {
                                   builder: (context) {
                                     return AlertDialog(
                                       content: Container(
-                                        width: 220,
+                                        width: width - 220,
                                         height: 105,
                                         child: Padding(
                                           padding:
                                               const EdgeInsets.only(top: 8.0),
-                                          child: Column(
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
                                             children: [
-                                              Row(
+                                              Column(
                                                 children: [
-                                                  Icon(Icons
-                                                      .photo_library_outlined),
-                                                  SizedBox(
-                                                    width: 10,
+                                                  Row(
+                                                    children: [
+                                                      Icon(Icons
+                                                          .photo_library_outlined),
+                                                      SizedBox(
+                                                        width: 10,
+                                                      ),
+                                                      ElevatedButton(
+                                                          onPressed: () {
+                                                            providerVar
+                                                                .profileAlbums();
+                                                            Navigator.of(
+                                                                    context)
+                                                                .pop();
+                                                          },
+                                                          child: Text(
+                                                              "Choose from Gallery")),
+                                                    ],
                                                   ),
-                                                  ElevatedButton(
-                                                      onPressed: () {
-                                                        providerVar
-                                                            .getAlbumsImage();
-                                                        Navigator.of(context)
-                                                            .pop();
-                                                      },
-                                                      child: Text(
-                                                          "Choose from Gallery")),
-                                                ],
-                                              ),
-                                              Row(
-                                                children: [
-                                                  Icon(Icons.camera),
-                                                  SizedBox(
-                                                    width: 10,
+                                                  Row(
+                                                    children: [
+                                                      Icon(Icons.camera),
+                                                      SizedBox(
+                                                        width: 10,
+                                                      ),
+                                                      ElevatedButton(
+                                                          onPressed: () {
+                                                            providerVar
+                                                                .profileCamera();
+                                                            Navigator.of(
+                                                                    context)
+                                                                .pop();
+                                                          },
+                                                          child: Text(
+                                                              "Choose from Camera")),
+                                                    ],
                                                   ),
-                                                  ElevatedButton(
-                                                      onPressed: () {
-                                                        providerVar
-                                                            .getCameraImage();
-                                                        Navigator.of(context)
-                                                            .pop();
-                                                      },
-                                                      child: Text(
-                                                          "Choose from Camera")),
                                                 ],
                                               ),
                                             ],
@@ -220,7 +228,7 @@ class _SettingPageState extends State<SettingPage> {
                                                         ElevatedButton(
                                                             onPressed: () {
                                                               providerVar
-                                                                  .getAlbumsImage();
+                                                                  .profileAlbums();
                                                               Navigator.of(
                                                                       context)
                                                                   .pop();
@@ -238,7 +246,7 @@ class _SettingPageState extends State<SettingPage> {
                                                         ElevatedButton(
                                                             onPressed: () {
                                                               providerVar
-                                                                  .getCameraImage();
+                                                                  .profileCamera();
                                                               Navigator.of(
                                                                       context)
                                                                   .pop();
