@@ -29,6 +29,7 @@ class ContactPage extends StatefulWidget {
   @override
   State<ContactPage> createState() => _ContactPageState();
 }
+
 var formatedDate;
 var datepicker;
 var formateTime;
@@ -89,26 +90,37 @@ class _ContactPageState extends State<ContactPage> {
                                           children: [
                                             Row(
                                               children: [
-                                                Icon(Icons.photo_library_outlined),
-                                                SizedBox(width: 10,),
-                                                ElevatedButton(onPressed: () {
-                                                  providerVar
-                                                      .getAlbumsImage();
-                                                  Navigator.of(context)
-                                                      .pop();
-                                                }, child: Text("Choose from Gallery")),
+                                                Icon(Icons
+                                                    .photo_library_outlined),
+                                                SizedBox(
+                                                  width: 10,
+                                                ),
+                                                ElevatedButton(
+                                                    onPressed: () {
+                                                      providerVar
+                                                          .getAlbumsImage();
+                                                      Navigator.of(context)
+                                                          .pop();
+                                                    },
+                                                    child: Text(
+                                                        "Choose from Gallery")),
                                               ],
                                             ),
                                             Row(
                                               children: [
                                                 Icon(Icons.camera),
-                                                SizedBox(width: 10,),
-                                                ElevatedButton(onPressed: () {
-                                                  providerVar
-                                                      .getCameraImage();
-                                                  Navigator.of(context)
-                                                      .pop();
-                                                }, child: Text("Choose from Camera")),
+                                                SizedBox(
+                                                  width: 10,
+                                                ),
+                                                ElevatedButton(
+                                                    onPressed: () {
+                                                      providerVar
+                                                          .getCameraImage();
+                                                      Navigator.of(context)
+                                                          .pop();
+                                                    },
+                                                    child: Text(
+                                                        "Choose from Camera")),
                                               ],
                                             ),
                                           ],
@@ -138,6 +150,12 @@ class _ContactPageState extends State<ContactPage> {
                             color: Colors.black,
                             width: 4)),
                   ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter a name';
+                    }
+                    return null;
+                  },
                   keyboardType: TextInputType.text,
                 ),
                 SizedBox(
@@ -154,6 +172,12 @@ class _ContactPageState extends State<ContactPage> {
                               style: BorderStyle.solid,
                               color: Colors.black,
                               width: 4))),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter a Phone Number';
+                    }
+                    return null;
+                  },
                 ),
                 SizedBox(
                   height: 15,
@@ -168,6 +192,12 @@ class _ContactPageState extends State<ContactPage> {
                               style: BorderStyle.solid,
                               color: Colors.black,
                               width: 4))),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter a Chat Conversation';
+                    }
+                    return null;
+                  },
                   keyboardType: TextInputType.text,
                 ),
                 SizedBox(
@@ -217,7 +247,6 @@ class _ContactPageState extends State<ContactPage> {
                   onTap: () async {
                     time = await showTimePicker(
                         context: context, initialTime: TimeOfDay.now());
-                    print(time.format(context));
                     if (time != null) {
                       datepicker = DateTime(
                           DateTime.now().year,
@@ -228,8 +257,6 @@ class _ContactPageState extends State<ContactPage> {
                       setState(() {
                         formateTime = DateFormat('HH:mm').format(datepicker);
                       });
-
-                      print(formateTime);
                     }
                   },
                   child: Padding(
@@ -255,32 +282,43 @@ class _ContactPageState extends State<ContactPage> {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      if (providerVar.addImage != null) {
-                        if (formkey.currentState!.validate()) {
+                      if (formkey.currentState!.validate() &&
+                          formatedDate != null &&
+                          formateTime != null) {
+                        if (providerVar.addImage != null) {
                           var snackbar = SnackBar(
                             content: Center(child: Text('Submit Successful')),
                             duration: Duration(seconds: 1),
                           );
                           ScaffoldMessenger.of(context).showSnackBar(snackbar);
-                          ModelClass Data = ModelClass(
-                              name: nameController.text,
-                              number: numberController.text,
-                              chat: chatController.text,
-                              Image: providerVar.addImage,
-                              Date: formatedDate,
-                              Time: formateTime);
-                          providerVar.addContactData(Data);
+                          ModelClass data = ModelClass(
+                            name: nameController.text,
+                            number: numberController.text,
+                            chat: chatController.text,
+                            Image: providerVar.addImage,
+                            Date: formatedDate,
+                            Time: formateTime,
+                          );
+                          providerVar.addContactData(data);
                           nameController.clear();
                           numberController.clear();
                           chatController.clear();
                           providerVar.addImage = null;
                           formatedDate = null;
                           formateTime = null;
+                        } else {
+                          var snackbar = SnackBar(
+                            content: Center(child: Text('Please add an image')),
+                            duration: Duration(seconds: 1),
+                          );
+                          ScaffoldMessenger.of(context).showSnackBar(snackbar);
                         }
                       } else {
                         var snackbar = SnackBar(
-                            content: Center(child: Text('PLEASE ADD DETAIL.')),
-                            duration: Duration(seconds: 1));
+                          content:
+                              Center(child: Text('Please complete all fields')),
+                          duration: Duration(seconds: 1),
+                        );
                         ScaffoldMessenger.of(context).showSnackBar(snackbar);
                       }
                     },
@@ -328,32 +366,45 @@ class _ContactPageState extends State<ContactPage> {
                                             width: 220,
                                             height: 105,
                                             child: Padding(
-                                              padding:
-                                              const EdgeInsets.only(top: 8.0),
+                                              padding: const EdgeInsets.only(
+                                                  top: 8.0),
                                               child: Column(
                                                 children: [
                                                   Row(
                                                     children: [
-                                                      Icon(Icons.photo_library_outlined),
-                                                      SizedBox(width: 10,),
-                                                      ElevatedButton(onPressed: () {
-                                                        providerVar
-                                                            .getAlbumsImage();
-                                                        Navigator.of(context)
-                                                            .pop();
-                                                      }, child: Text("Choose from Gallery")),
+                                                      Icon(Icons
+                                                          .photo_library_outlined),
+                                                      SizedBox(
+                                                        width: 10,
+                                                      ),
+                                                      ElevatedButton(
+                                                          onPressed: () {
+                                                            providerVar
+                                                                .getAlbumsImage();
+                                                            Navigator.of(
+                                                                    context)
+                                                                .pop();
+                                                          },
+                                                          child: Text(
+                                                              "Choose from Gallery")),
                                                     ],
                                                   ),
                                                   Row(
                                                     children: [
                                                       Icon(Icons.camera),
-                                                      SizedBox(width: 10,),
-                                                      ElevatedButton(onPressed: () {
-                                                        providerVar
-                                                            .getCameraImage();
-                                                        Navigator.of(context)
-                                                            .pop();
-                                                      }, child: Text("Choose from Camera")),
+                                                      SizedBox(
+                                                        width: 10,
+                                                      ),
+                                                      ElevatedButton(
+                                                          onPressed: () {
+                                                            providerVar
+                                                                .getCameraImage();
+                                                            Navigator.of(
+                                                                    context)
+                                                                .pop();
+                                                          },
+                                                          child: Text(
+                                                              "Choose from Camera")),
                                                     ],
                                                   ),
                                                 ],

@@ -37,82 +37,77 @@ class _SettingPageState extends State<SettingPage> {
                 children: [
                   (providerVar.proImage != null)
                       ? CircleAvatar(
-                    radius: 70,
-                    backgroundImage: FileImage(providerVar.proImage!),
-                  )
+                          radius: 70,
+                          backgroundImage: FileImage(providerVar.proImage!),
+                        )
                       : Container(
-                    height: 145,
-                    width: 145,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle, color: Colors.black12),
-                    child: IconButton(
-                      onPressed: () {
-                        showDialog(
-                            context: context,
-                            builder: (context) {
-                              return AlertDialog(
-                                content: Container(
-                                  width: width - 220,
-                                  height: 100,
-                                  child: Padding(
-                                    padding:
-                                    const EdgeInsets.only(top: 8.0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                      children: [
-                                        Column(
-                                          children: [
-                                            IconButton(
-                                                onPressed: () {
-                                                  providerVar
-                                                      .profileAlbumsImage();
-                                                  Navigator.of(context)
-                                                      .pop();
-                                                },
-                                                icon: Icon(
-                                                  CupertinoIcons.photo,
-                                                  size: 40,
-                                                )),
-                                            Text('Albums',
-                                                style: TextStyle(
-                                                    fontSize: 20)),
-                                          ],
+                          height: 145,
+                          width: 145,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle, color: Colors.black12),
+                          child: IconButton(
+                            onPressed: () {
+                              showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return AlertDialog(
+                                      content: Container(
+                                        width: 220,
+                                        height: 105,
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 8.0),
+                                          child: Column(
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  Icon(Icons
+                                                      .photo_library_outlined),
+                                                  SizedBox(
+                                                    width: 10,
+                                                  ),
+                                                  ElevatedButton(
+                                                      onPressed: () {
+                                                        providerVar
+                                                            .getAlbumsImage();
+                                                        Navigator.of(context)
+                                                            .pop();
+                                                      },
+                                                      child: Text(
+                                                          "Choose from Gallery")),
+                                                ],
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Icon(Icons.camera),
+                                                  SizedBox(
+                                                    width: 10,
+                                                  ),
+                                                  ElevatedButton(
+                                                      onPressed: () {
+                                                        providerVar
+                                                            .getCameraImage();
+                                                        Navigator.of(context)
+                                                            .pop();
+                                                      },
+                                                      child: Text(
+                                                          "Choose from Camera")),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                        Column(
-                                          children: [
-                                            IconButton(
-                                                onPressed: () {
-                                                  providerVar
-                                                      .profileCameraImage();
-                                                  Navigator.of(context)
-                                                      .pop();
-                                                },
-                                                icon: Icon(
-                                                  Icons.camera,
-                                                  size: 40,
-                                                )),
-                                            Text(
-                                              'Camera',
-                                              style:
-                                              TextStyle(fontSize: 20),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              );
-                            });
-                      },
-                      icon: Icon(
-                        Icons.add_a_photo_outlined,
-                        size: 50,
-                        color: Colors.blue,
-                      ),
-                    ),
-                  ),
+                                      ),
+                                    );
+                                  });
+                            },
+                            icon: Icon(
+                              Icons.add_a_photo_outlined,
+                              size: 50,
+                              color: Colors.blue,
+                            ),
+                          ),
+                        ),
                   TextFormField(
                     textAlign: TextAlign.center,
                     controller: providerVar.NameController,
@@ -134,7 +129,7 @@ class _SettingPageState extends State<SettingPage> {
                         TextButton(
                             onPressed: () {
                               var snackbar =
-                              SnackBar(content: Text('SAVE PROFILE DATA'));
+                                  SnackBar(content: Text('SAVE PROFILE DATA'));
                               ScaffoldMessenger.of(context)
                                   .showSnackBar(snackbar);
                             },
@@ -193,78 +188,78 @@ class _SettingPageState extends State<SettingPage> {
                     children: [
                       (providerVar.proImage != null)
                           ? CircleAvatar(
-                        radius: 70,
-                        backgroundImage: FileImage(providerVar.proImage!),
-                      )
+                              radius: 70,
+                              backgroundImage: FileImage(providerVar.proImage!),
+                            )
                           : Container(
-                        height: 145,
-                        width: 145,
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle, color: Colors.blue),
-                        child: CupertinoButton(
-                            onPressed: () {
-                              showCupertinoModalPopup(
-                                  context: context,
-                                  builder: (context) {
-                                    return CupertinoAlertDialog(
-                                      content: Row(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Container(
-                                            child: Column(
-                                              children: [
-                                                CupertinoButton(
-                                                    child: Icon(
-                                                      Icons.camera,
-                                                      size: 35,
+                              height: 145,
+                              width: 145,
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle, color: Colors.blue),
+                              child: CupertinoButton(
+                                  onPressed: () {
+                                    showCupertinoModalPopup(
+                                        context: context,
+                                        builder: (context) {
+                                          return CupertinoAlertDialog(
+                                            content: Container(
+                                              width: 220,
+                                              height: 105,
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    top: 8.0),
+                                                child: Column(
+                                                  children: [
+                                                    Row(
+                                                      children: [
+                                                        Icon(Icons
+                                                            .photo_library_outlined),
+                                                        SizedBox(
+                                                          width: 10,
+                                                        ),
+                                                        ElevatedButton(
+                                                            onPressed: () {
+                                                              providerVar
+                                                                  .getAlbumsImage();
+                                                              Navigator.of(
+                                                                      context)
+                                                                  .pop();
+                                                            },
+                                                            child: Text(
+                                                                "Choose from Gallery")),
+                                                      ],
                                                     ),
-                                                    onPressed: () {
-                                                      providerVar
-                                                          .profileCameraImage();
-                                                      Navigator.of(context)
-                                                          .pop();
-                                                    }),
-                                                Text(
-                                                  'CAMERA',
-                                                  style: TextStyle(
-                                                      fontSize: 18),
+                                                    Row(
+                                                      children: [
+                                                        Icon(Icons.camera),
+                                                        SizedBox(
+                                                          width: 10,
+                                                        ),
+                                                        ElevatedButton(
+                                                            onPressed: () {
+                                                              providerVar
+                                                                  .getCameraImage();
+                                                              Navigator.of(
+                                                                      context)
+                                                                  .pop();
+                                                            },
+                                                            child: Text(
+                                                                "Choose from Camera")),
+                                                      ],
+                                                    ),
+                                                  ],
                                                 ),
-                                              ],
+                                              ),
                                             ),
-                                          ),
-                                          Container(
-                                            child: Column(
-                                              children: [
-                                                CupertinoButton(
-                                                    child: Icon(
-                                                      CupertinoIcons
-                                                          .photo_on_rectangle,
-                                                      size: 35,
-                                                    ),
-                                                    onPressed: () {
-                                                      providerVar
-                                                          .profileAlbumsImage();
-                                                      Navigator.of(context)
-                                                          .pop();
-                                                    }),
-                                                Text('ALBUMS',
-                                                    style: TextStyle(
-                                                        fontSize: 18)),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    );
-                                  });
-                            },
-                            child: Icon(
-                              CupertinoIcons.camera,
-                              size: 34,
-                              color: Colors.white,
-                            )),
-                      ),
+                                          );
+                                        });
+                                  },
+                                  child: Icon(
+                                    CupertinoIcons.camera,
+                                    size: 34,
+                                    color: Colors.white,
+                                  )),
+                            ),
                       CupertinoTextFormFieldRow(
                         placeholder: 'Enter your name...',
                         textAlign: TextAlign.center,
@@ -281,8 +276,8 @@ class _SettingPageState extends State<SettingPage> {
                           CupertinoButton(
                               child: Text('SAVE'),
                               onPressed: () {
-                                var snackbar =
-                                SnackBar(content: Text('SAVE PROFILE DATA'));
+                                var snackbar = SnackBar(
+                                    content: Text('SAVE PROFILE DATA'));
                                 ScaffoldMessenger.of(context)
                                     .showSnackBar(snackbar);
                               }),

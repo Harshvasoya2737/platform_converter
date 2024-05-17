@@ -4,7 +4,6 @@ import 'package:platform_converter/view/Home_page.dart';
 import 'package:platform_converter/view/android&ios/chats_page.dart';
 import 'package:platform_converter/view/android&ios/add_contact_page.dart';
 import 'package:platform_converter/view/android&ios/setting_page.dart';
-import 'package:platform_converter/view/splash_screen.dart';
 import 'package:platform_converter/view/android&ios/calls_page.dart';
 import 'package:provider/provider.dart';
 import 'controller/Theme_provider.dart';
@@ -32,13 +31,12 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               theme: (value.isTheme == false)
                   ? ThemeData(
-                colorScheme:
-                ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-              )
+                      colorScheme:
+                          ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+                    )
                   : ThemeData.dark(),
               initialRoute: "/",
               routes: {
-                // "splash_screen":(context)=>Splashscreen(),
                 "/": (context) => HomePage(),
                 "contacts": (context) => ContactPage(),
                 "chats": (context) => ChatPage(),
@@ -51,11 +49,11 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               theme: (value.isTheme == false)
                   ? CupertinoThemeData(
-                  barBackgroundColor: Colors.white,
-                  brightness: Brightness.light)
+                      barBackgroundColor: Colors.white,
+                      brightness: Brightness.light)
                   : CupertinoThemeData(
-                  barBackgroundColor: Colors.black,
-                  brightness: Brightness.dark),
+                      barBackgroundColor: Colors.black,
+                      brightness: Brightness.dark),
               initialRoute: "/",
               routes: {
                 "/": (context) => HomePage(),

@@ -139,7 +139,9 @@ class _ChatPageState extends State<ChatPage> {
                                                                                               Row(
                                                                                                 children: [
                                                                                                   Icon(Icons.photo_library_outlined),
-                                                                                                  SizedBox(width: 10,),
+                                                                                                  SizedBox(
+                                                                                                    width: 10,
+                                                                                                  ),
                                                                                                   ElevatedButton(
                                                                                                       onPressed: () {
                                                                                                         providerVar.getAlbumsImage();
@@ -151,7 +153,9 @@ class _ChatPageState extends State<ChatPage> {
                                                                                               Row(
                                                                                                 children: [
                                                                                                   Icon(Icons.camera),
-                                                                                                  SizedBox(width: 10,),
+                                                                                                  SizedBox(
+                                                                                                    width: 10,
+                                                                                                  ),
                                                                                                   ElevatedButton(
                                                                                                       onPressed: () {
                                                                                                         providerVar.getCameraImage();
@@ -169,10 +173,8 @@ class _ChatPageState extends State<ChatPage> {
                                                                             },
                                                                             child:
                                                                                 CircleAvatar(
-                                                                              radius:
-                                                                                  60,
-                                                                              backgroundImage:
-                                                                                  FileImage(providerVar.editImage!),
+                                                                              radius: 60,
+                                                                              backgroundImage: FileImage(providerVar.editImage!),
                                                                             ),
                                                                           )
                                                                         : Container(
@@ -180,15 +182,12 @@ class _ChatPageState extends State<ChatPage> {
                                                                                 115,
                                                                             width:
                                                                                 115,
-                                                                            decoration: BoxDecoration(
-                                                                                shape: BoxShape.circle,
-                                                                                color: Colors.black12),
+                                                                            decoration:
+                                                                                BoxDecoration(shape: BoxShape.circle, color: Colors.black12),
                                                                             child:
                                                                                 IconButton(
-                                                                              onPressed:
-                                                                                  () {},
-                                                                              icon:
-                                                                                  Icon(
+                                                                              onPressed: () {},
+                                                                              icon: Icon(
                                                                                 CupertinoIcons.add,
                                                                                 size: 60,
                                                                                 color: Colors.blue,
@@ -196,7 +195,8 @@ class _ChatPageState extends State<ChatPage> {
                                                                             ),
                                                                           ),
                                                                     SizedBox(
-                                                                      height: 10,
+                                                                      height:
+                                                                          10,
                                                                     ),
                                                                     TextFormField(
                                                                       controller:
@@ -205,8 +205,7 @@ class _ChatPageState extends State<ChatPage> {
                                                                       decoration:
                                                                           InputDecoration(
                                                                         prefixIcon:
-                                                                            Icon(Icons
-                                                                                .person_outline_rounded),
+                                                                            Icon(Icons.person_outline_rounded),
                                                                         labelText:
                                                                             ' Enter Full Name',
                                                                         border: OutlineInputBorder(
@@ -220,45 +219,39 @@ class _ChatPageState extends State<ChatPage> {
                                                                               .text,
                                                                     ),
                                                                     SizedBox(
-                                                                      height: 15,
+                                                                      height:
+                                                                          15,
                                                                     ),
                                                                     TextFormField(
                                                                       controller:
                                                                           providerVar
                                                                               .editNumber,
                                                                       decoration: InputDecoration(
-                                                                          prefixIcon:
-                                                                              Icon(Icons
-                                                                                  .call),
+                                                                          prefixIcon: Icon(Icons
+                                                                              .call),
                                                                           labelText:
                                                                               'Enter Phone Number',
-                                                                          border: OutlineInputBorder(
-                                                                              borderSide: BorderSide(
-                                                                                  style: BorderStyle.solid,
-                                                                                  color: Colors.black,
-                                                                                  width: 4))),
+                                                                          border:
+                                                                              OutlineInputBorder(borderSide: BorderSide(style: BorderStyle.solid, color: Colors.black, width: 4))),
                                                                       keyboardType:
                                                                           TextInputType
                                                                               .number,
                                                                     ),
                                                                     SizedBox(
-                                                                      height: 15,
+                                                                      height:
+                                                                          15,
                                                                     ),
                                                                     TextFormField(
                                                                       controller:
                                                                           providerVar
                                                                               .editChat,
                                                                       decoration: InputDecoration(
-                                                                          prefixIcon:
-                                                                              Icon(Icons
-                                                                                  .chat_outlined),
+                                                                          prefixIcon: Icon(Icons
+                                                                              .chat_outlined),
                                                                           labelText:
                                                                               'Enter Chat Conversation',
-                                                                          border: OutlineInputBorder(
-                                                                              borderSide: BorderSide(
-                                                                                  style: BorderStyle.solid,
-                                                                                  color: Colors.black,
-                                                                                  width: 4))),
+                                                                          border:
+                                                                              OutlineInputBorder(borderSide: BorderSide(style: BorderStyle.solid, color: Colors.black, width: 4))),
                                                                       keyboardType:
                                                                           TextInputType
                                                                               .text,
@@ -277,12 +270,10 @@ class _ChatPageState extends State<ChatPage> {
                                                                         date = await showDatePicker(
                                                                             context:
                                                                                 context,
-                                                                            firstDate: DateTime(
-                                                                                1990),
-                                                                            lastDate: DateTime(
-                                                                                3000),
-                                                                            initialDate:
-                                                                                DateTime.now());
+                                                                            firstDate:
+                                                                                DateTime(1990),
+                                                                            lastDate: DateTime(3000),
+                                                                            initialDate: DateTime.now());
                                                                         print(
                                                                             date);
                                                                         if (date !=
@@ -303,8 +294,7 @@ class _ChatPageState extends State<ChatPage> {
                                                                         child:
                                                                             Row(
                                                                           children: [
-                                                                            Icon(Icons
-                                                                                .date_range_outlined),
+                                                                            Icon(Icons.date_range_outlined),
                                                                             (formatedDate == null)
                                                                                 ? Text(
                                                                                     providerVar.editDate,
@@ -335,8 +325,7 @@ class _ChatPageState extends State<ChatPage> {
                                                                             initialTime:
                                                                                 TimeOfDay.now());
                                                                         print(time
-                                                                            .format(
-                                                                                context));
+                                                                            .format(context));
                                                                         if (time !=
                                                                             null) {
                                                                           datepicker = DateTime(
@@ -364,8 +353,7 @@ class _ChatPageState extends State<ChatPage> {
                                                                         child:
                                                                             Row(
                                                                           children: [
-                                                                            Icon(Icons
-                                                                                .access_time),
+                                                                            Icon(Icons.access_time),
                                                                             (formateTime == null)
                                                                                 ? Text(
                                                                                     providerVar.editTime,
@@ -387,9 +375,7 @@ class _ChatPageState extends State<ChatPage> {
                                                                         OutlinedButton(
                                                                             onPressed:
                                                                                 () {
-                                                                              ModelClass
-                                                                                  edit =
-                                                                                  ModelClass(
+                                                                              ModelClass edit = ModelClass(
                                                                                 name: providerVar.editName.text,
                                                                                 number: providerVar.editNumber.text,
                                                                                 chat: providerVar.editChat.text,
@@ -397,16 +383,12 @@ class _ChatPageState extends State<ChatPage> {
                                                                                 Date: (formatedDate == null) ? providerVar.editDate : formatedDate,
                                                                                 Time: (formateTime == null) ? providerVar.editTime : formateTime,
                                                                               );
-                                                                              providerVar.editContactData(edit,
-                                                                                  index);
+                                                                              providerVar.editContactData(edit, index);
 
                                                                               Navigator.of(context).pop();
-                                                                              providerVar.editImage =
-                                                                                  null;
-                                                                              providerVar.editTime =
-                                                                                  null;
-                                                                              providerVar.editDate =
-                                                                                  null;
+                                                                              providerVar.editImage = null;
+                                                                              providerVar.editTime = null;
+                                                                              providerVar.editDate = null;
                                                                             },
                                                                             child:
                                                                                 Text('EDIT')),
@@ -629,7 +611,9 @@ class _ChatPageState extends State<ChatPage> {
                                                                                           Row(
                                                                                             children: [
                                                                                               Icon(Icons.photo_library_outlined),
-                                                                                              SizedBox(width: 10,),
+                                                                                              SizedBox(
+                                                                                                width: 10,
+                                                                                              ),
                                                                                               ElevatedButton(
                                                                                                   onPressed: () {
                                                                                                     providerVar.getAlbumsImage();
@@ -641,7 +625,9 @@ class _ChatPageState extends State<ChatPage> {
                                                                                           Row(
                                                                                             children: [
                                                                                               Icon(Icons.camera),
-                                                                                              SizedBox(width: 10,),
+                                                                                              SizedBox(
+                                                                                                width: 10,
+                                                                                              ),
                                                                                               ElevatedButton(
                                                                                                   onPressed: () {
                                                                                                     providerVar.getCameraImage();

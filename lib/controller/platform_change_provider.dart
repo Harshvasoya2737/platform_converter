@@ -78,7 +78,7 @@ class platformProvider with ChangeNotifier {
 
   List<ModelClass> contactData = [];
 
-  //for theme-----------------------------------------------------------
+  //for theme
   set setTheme(value) {
     isTheme = value;
     notifyListeners();
