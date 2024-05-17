@@ -4,7 +4,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:platform_converter/model/modelclass.dart';
 
 class platformProvider with ChangeNotifier {
-  bool isAndroid = false;
+  bool isAndroid = true;
 
   void changePlatform(bool isAndroid) {
     this.isAndroid = isAndroid;
